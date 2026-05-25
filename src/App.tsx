@@ -192,7 +192,6 @@ export default function App() {
                 <div className="th">Claim</div>
                 <div className="th">Verdict</div>
                 <div className="th">Source</div>
-                <div className="th">Verified</div>
               </div>
               {results.map(r => <Row key={r.claim.id} r={r} />)}
             </div>
@@ -202,7 +201,7 @@ export default function App() {
 
       {/* footer */}
       <footer className="footer">
-        <span>@PARASAGARWAL</span>
+        <span>By <a href="https://github.com/ParasxAgarwal" target="_blank" rel="noreferrer" className="footerLink">@PARASAGARWAL</a></span>
       </footer>
     </div>
   );
@@ -212,8 +211,6 @@ export default function App() {
 function Row({ r }: { r: ClaimResult }) {
   const conf = Math.round((r.confidence ?? 0) * 100);
   const ev   = r.evidence?.[0];
-  const verifiedDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-  const verifiedTime = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
 
   return (
     <div className="trow">
@@ -240,10 +237,6 @@ function Row({ r }: { r: ClaimResult }) {
         ) : (
           <span className="evNone">—</span>
         )}
-      </div>
-
-      <div className="td">
-        <span className="verifiedDate" title={`Verified at ${verifiedTime}`}>{verifiedDate}</span>
       </div>
     </div>
   );

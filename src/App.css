@@ -332,7 +332,7 @@
 
 .thead {
   display: grid;
-  grid-template-columns: 1fr 110px 1fr 80px;
+  grid-template-columns: 1fr 110px 1fr;
   background: var(--n50);
   border-bottom: 1px solid var(--n200);
 }
@@ -350,7 +350,7 @@
 
 .trow {
   display: grid;
-  grid-template-columns: 1fr 110px 1fr 80px;
+  grid-template-columns: 1fr 110px 1fr;
   background: var(--white);
   transition: background 100ms;
 }
@@ -366,13 +366,6 @@
 }
 
 .td + .td { border-left: 1px solid var(--n100); }
-
-.verifiedDate {
-  font-size: 11px;
-  color: var(--n500);
-  white-space: nowrap;
-  font-weight: 500;
-}
 
 /* verdict */
 .badge {
@@ -453,6 +446,17 @@
 .footerLinks { display: flex; gap: 14px; }
 .footerLinks a { color: var(--n400); }
 .footerLinks a:hover { color: var(--n600); }
+
+.footerLink {
+  color: var(--n600);
+  font-weight: 500;
+  transition: color 200ms;
+}
+
+.footerLink:hover {
+  color: var(--n900);
+  text-decoration: underline;
+}
 
 /* ─── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 640px) {
