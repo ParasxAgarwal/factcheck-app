@@ -1,0 +1,64 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+        "$schema": "node_modules/wrangler/config-schema.json",
+        "name": "cogculture-factcheck-api",
+        "main": "src/index.ts",
+        "compatibility_date": "2026-05-25",
+        "assets": {
+                "binding": "ASSETS",
+                "directory": "./public"
+        },
+        "observability": {
+                "enabled": true
+        },
+        "upload_source_maps": true,
+        "compatibility_flags": [
+                "nodejs_compat"
+        ]
+        // Bindings (uncomment and set in your Cloudflare account)
+        // "r2_buckets": [
+        //      { "binding": "FACTCHECK_PDFS", "bucket_name": "factcheck-pdfs" }
+        // ],
+        // "d1_databases": [
+        //      {
+        //              "binding": "FACTCHECK_DB",
+        //              "database_name": "factcheck-db",
+        //              "database_id": "REPLACE_ME"
+        //      }
+        // ]
+        /**
+         * Smart Placement
+         * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
+         */
+        // "placement": {  "mode": "smart" }
+        /**
+         * Bindings
+         * Bindings allow your Worker to interact with resources on the Cloudflare Developer Platform, including
+         * databases, object storage, AI inference, real-time communication and more.
+         * https://developers.cloudflare.com/workers/runtime-apis/bindings/
+         */
+        /**
+         * Environment Variables
+         * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
+         * Note: Use secrets to store sensitive data.
+         * https://developers.cloudflare.com/workers/configuration/secrets/
+         */
+        // "vars": {  "MY_VARIABLE": "production_value" }
+        /**
+         * FIRECRAWL_API_KEY should be stored as a secret, not a plain var.
+         * Run: npx wrangler secret put FIRECRAWL_API_KEY
+         * This will prompt you to enter the value securely.
+         *
+         * If you need a non-sensitive placeholder for local dev only, you can use:
+         * "vars": { "FIRECRAWL_API_KEY": "your-dev-key-here" }
+         * But do NOT commit real API keys here.
+         */
+        /**
+         * Service Bindings (communicate between multiple Workers)
+         * https://developers.cloudflare.com/workers/wrangler/configuration/#service-bindings
+         */
+        // "services": [  {   "binding": "MY_SERVICE",   "service": "my-service"  } ]
+}

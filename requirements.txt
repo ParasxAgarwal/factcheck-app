@@ -1,0 +1,30 @@
+# FactCheck App - System Requirements
+# This is a Node.js / TypeScript project (not Python-based)
+#
+# Runtime Requirements:
+# - Node.js >= 20.0.0 (LTS recommended)
+# - npm >= 10.0.0 or yarn >= 3.6.0
+#
+# All dependencies are managed in:
+# - package.json (project root)
+# - worker/package.json (Cloudflare Worker)
+# - package-lock.json (lock file for reproducible installs)
+#
+# Installation:
+#   npm install
+#
+# Development:
+#   npm run dev              # Run both frontend & worker
+#   npm run dev:web          # Frontend only (http://localhost:5173)
+#   npm run dev:worker       # Backend worker only (http://localhost:8787)
+#
+# Production:
+#   npm run build            # Build frontend
+#   npm run build:worker     # Build worker
+#
+# Testing & Linting:
+#   npm run test             # Run all tests
+#   npm run lint             # Run ESLint
+#
+# For detailed setup instructions, see README.md
+

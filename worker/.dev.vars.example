@@ -1,0 +1,2 @@
+# Copy this to .dev.vars and fill in your actual keys
+FIRECRAWL_API_KEY=your-firecrawl-api-key-here
